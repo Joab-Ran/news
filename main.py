@@ -49,6 +49,10 @@ def postgrest_headers(user_authorization: str):
         "Prefer": "return=representation",
     }
 
+@app.get("/")
+async def root():
+    return {"message": "Funcionando!"}
+
 @app.get("/health")
 async def health():
     return {"status": "ok"}
